@@ -51,14 +51,35 @@ The application will be available at http://localhost:3000
 ## Project Structure
 
 ```
-src/
-├── components/         # Reusable UI components
-├── pages/             # Page components
-├── services/          # API services
-├── hooks/             # Custom React hooks
-├── types/             # TypeScript type definitions
-├── utils/             # Utility functions
-└── App.tsx            # Main application component
+social-media-analytics/
+├── public/
+│   ├── index.html
+│   ├── manifest.json
+│   ├── favicon.ico
+│   ├── logo192.png
+│   └── logo512.png
+├── src/
+│   ├── components/
+│   │   └── LoadingSpinner.tsx
+│   ├── hooks/
+│   │   └── useSocialMediaData.ts
+│   ├── pages/
+│   │   ├── TopUsers.tsx
+│   │   ├── TrendingPosts.tsx
+│   │   └── Feed.tsx
+│   ├── services/
+│   │   └── api.ts
+│   ├── types/
+│   │   └── index.ts
+│   ├── utils/
+│   │   └── helpers.ts
+│   ├── App.tsx
+│   ├── index.tsx
+│   └── reportWebVitals.ts
+├── package.json
+├── tsconfig.json
+├── .gitignore
+└── README.md
 ```
 
 ## API Integration
@@ -75,8 +96,49 @@ The application integrates with the following endpoints:
 - Optimized algorithms for identifying trending posts
 - Real-time updates with minimal API calls
 - Caching strategies to reduce server load
+- Debounced API calls to prevent excessive requests
+- React Query for efficient data caching and background updates
 
+## Key Components
+
+### LoadingSpinner
+A reusable loading component that provides visual feedback during data fetching operations.
+
+### Custom Hooks
+- `useSocialMediaData`: Manages data fetching and caching for users, posts, and comments
+- `useTopUsers`: Calculates and returns the top 5 users by post count
+- `useTrendingPosts`: Identifies posts with the highest number of comments
+
+### Pages
+- **Top Users**: Displays user cards with post counts and rankings
+- **Trending Posts**: Shows posts with the most comments
+- **Feed**: Real-time feed of all posts with automatic updates
+
+## Development Guidelines
+
+1. **Code Style**
+   - Follow TypeScript best practices
+   - Use functional components with hooks
+   - Implement proper error handling
+   - Write clean, maintainable code
+
+2. **Performance**
+   - Minimize API calls
+   - Implement proper caching
+   - Use efficient data structures
+   - Optimize re-renders
+
+3. **Testing**
+   - Write unit tests for components
+   - Test API integration
+   - Ensure responsive design
+   - Verify real-time updates
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details. 
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Author
+
+- Registration Number: RA2211008020111
+- GitHub: [RemyaaSree](https://github.com/RemyaaSree)
